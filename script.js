@@ -5,6 +5,7 @@ formEl.addEventListener("submit", function (event) {
 
   const inputEl = formEl.querySelector("input");
   const newTask = inputEl.value;
+
   const current = new Date();
   const dateEl =
     current.getDate() +
@@ -20,8 +21,9 @@ formEl.addEventListener("submit", function (event) {
 
   inputEl.value = "";
 
-  const newTaskHTML = `<li><input type="checkbox" /> <span class='checkbox'>${newTask}</span> (added on ${dateEl} at ${timeEl}) </li>`;
+  const newTaskHTML = `<li> <input type="checkbox" /> <span class='checkbox'>${newTask}</span> <span class='postDate'>(added on ${dateEl} at ${timeEl}) </span> </li>`;
   console.log(newTaskHTML);
+
   const listEl = document.querySelector(".task-list");
 
   listEl.innerHTML += newTaskHTML;
